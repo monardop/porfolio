@@ -1,6 +1,11 @@
 {
   "HomePage": {
-    "title": "Buenos días!",
-    "about": "Andate a la mierda"
+    "hero": {
+      "title": "Pablo Monardo",
+      "paragraph": "Apasionado por la tecnología y la innovación, con experiencia en multimedia y educación. Actualmente, me encuentro desarrollando mis habilidades en programación y desarrollo de software, mientras exploro nuevas áreas para seguir creciendo profesionalmente. Siempre abierto a nuevos desafíos y oportunidades.",
+      "eyebrown": "¡Buenas!",
+      "subtitle":"Ingeniería informática y desarrollo web"
+    },
+    "content":""
   }
 }
