@@ -1,69 +1,49 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant high-contrast (&:where(.high-contrast, .high-contrast *));
+
 @theme {
-  /* === Modo Claro (Light) === */
-  --color-primary: 74 111 165;  /* #4A6FA5 (azul) */
-  --color-secondary: 110 74 142; /* #6E4A8E (violeta) */
-  --color-bg: 248 249 250;      /* #F8F9FA (gris claro) */
-  --color-text: 51 51 51;       /* #333333 (gris oscuro) */
-  --color-card: 255 255 255;    /* #FFFFFF */
-  --color-border: 224 229 236;  /* #E0E5EC */
-
-  /* === Modo Oscuro (Dark) === */
-  --color-dark-primary: 58 90 128;   /* #3A5A80 (azul oscuro) */
-  --color-dark-secondary: 138 107 190; /* #8A6BBE (violeta brillante) */
-  --color-dark-bg: 18 18 18;         /* #121212 */
-  --color-dark-text: 224 224 224;    /* #E0E0E0 */
-  --color-dark-card: 30 30 30;       /* #1E1E1E */
-  --color-dark-border: 45 45 45;     /* #2D2D2D */
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-bg: var(--bg);
+  --color-text: var(--text);
+  --color-card: var(--card);
+  --color-border: var(--border);
 }
 
-@layer base {
-  :root {
-    /* Light Theme (default) */
-    --primary: rgb(var(--color-primary));
-    --secondary: rgb(var(--color-secondary));
-    --bg: rgb(var(--color-bg));
-    --text: rgb(var(--color-text));
-    --card: rgb(var(--color-card));
-    --border: rgb(var(--color-border));
-  }
-
-  [data-theme="dark"] {
-    /* Dark Theme */
-    --primary: rgb(var(--color-dark-primary));
-    --secondary: rgb(var(--color-dark-secondary));
-    --bg: rgb(var(--color-dark-bg));
-    --text: rgb(var(--color-dark-text));
-    --card: rgb(var(--color-dark-card));
-    --border: rgb(var(--color-dark-border));
-  }
-
-  html {
-    @apply bg-bg text-text antialiased;
-    font-family: 'Inter', system-ui, sans-serif; /* Recomendado para diseños modernos */
-  }
-
-  body {
-    @apply min-h-screen;
-  }
-
-  /* Aplicar colores temáticos a componentes */
-  h1, h2, h3, h4 {
-    @apply text-primary;
-  }
-
-  a, .btn {
-    @apply text-secondary hover:opacity-90 transition-opacity;
-  }
-
-  .card {
-    @apply bg-card border border-border rounded-lg p-6;
-  }
+:root {
+  --primary: #4a6fa5;
+  --secondary: #6e4a8e;
+  --bg: #f8f9fa;
+  --text: #333333;
+  --card: #ffffff;
+  --border: #e0e5ec;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.light {
+  --primary: #4a6fa5;
+  --secondary: #6e4a8e;
+  --bg: #f8f9fa;
+  --text: #333333;
+  --card: #ffffff;
+  --border: #e0e5ec;
+}
+
+.dark {
+  --primary: #3a5a80;
+  --secondary: #8a6bbe;
+  --bg: #121212;
+  --text: #e0e0e0;
+  --card: #1e1e1e;
+  --border: #2d2d2d;
+}
+
+.high-contrast {
+  --primary: #0057b7;
+  --secondary: #ffd700;
+  --bg: #000000;
+  --text: #ffffff;
+  --card: #222222;
+  --border: #ff0000;
 }
